@@ -70,7 +70,7 @@ func extractInventory(rawInventory string) map[string]map[string]string {
 	lines := strings.Split(rawInventory, "\n")
 	section := ""
 	for _, line := range lines {
-		if line == "" || strings.HasPrefix(line, "-") {
+		if line == "" || strings.HasPrefix(line, "-") || strings.HasPrefix(line, "Warning:") {
 			continue
 		}
 
